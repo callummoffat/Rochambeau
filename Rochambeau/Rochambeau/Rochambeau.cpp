@@ -4,6 +4,8 @@
 #include "stdafx.h"
 #include "Game.h"
 
+const string GameVersion = "v2.0.1";
+
 string getPlayerName()
 {
 	string result;
@@ -31,8 +33,10 @@ bool continuePrompt()
 		return true;
 	case 'n':
 	case 'N':
-	default:
 		return false;
+	default:
+		cout << "Invalid choice - please try again.\n";
+		return continuePrompt();
 
 
 	}
@@ -42,7 +46,7 @@ int main()
 {
 	
 
-	cout << "Welcome to Rochambeau (version 2.0)!";
+	cout << "Welcome to Rochambeau " << GameVersion << "!";
 	string name = getPlayerName();
 
 	Game* game = new Game();
@@ -55,7 +59,9 @@ int main()
 			break;
 	}
 	
+	cout << "\n";
 	system("pause");
+	delete game;
     return 0;
 }
 
