@@ -1,4 +1,5 @@
 #pragma once
+
 enum MoveTypes
 {
 	Paper = 1,

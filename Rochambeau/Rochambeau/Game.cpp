@@ -26,18 +26,18 @@ void Game::play(string playerName)
 
 		if (playersChoice == computerChoice)
 		{
-			cout << "\nThe match was a draw!";
+			cout << Constants::DrawMessage;
 		}
 		else 
 		{
 			if (playersChoice > computerChoice)
 			{
-				cout << "\nCongrats, " << playerName << "! You won this round!";
+				cout << Constants::getRoundWinText(playerName);
 				playerScore++;
 			}
 			else
 			{
-				cout << "\nToo bad, " << playerName << ". You lost this round...";
+				cout << Constants::getRoundLoseText(playerName);
 				computerScore++;
 			}
 		}
@@ -45,11 +45,11 @@ void Game::play(string playerName)
 
 	if (playerScore > computerScore)
 	{
-		cout << "\nCongratulations, " << playerName << "! You won this best out of three match!\n";
+		cout << Constants::getGameWinText(playerName);
 	}
 	else
 	{
-		cout << "\nToo bad, " << playerName << ". You lost this best out of three match...\n";
+		cout << Constants::getGameLoseText(playerName);
 	}
 }
 
@@ -60,19 +60,18 @@ void Game::play(string playerName)
 int Game::getPlayerChoice()
 {
 	int result;
-	cout << "\nIn this game, you can choose between paper, scissors or rock."
-		<< "\nPress 1 for paper, 2 for scissors or 3 for rock.\n";
+	cout << Constants::ChoiceIntroMessage;
 
-	while (cout << "Enter your choice: " && !(cin >> result))
+	while (cout << Constants::ChoiceEntryPrompt && !(cin >> result))
 	{
 		cin.clear();
 		cin.ignore(numeric_limits<streamsize>::max(), '\n'); //discard input
-		cout << "Invalid choice - please try again.\n";
+		cout << Constants::InvalidChoiceError;
 	}
 
 	if (result < 1 || result > 3)
 	{
-		cout << "Invalid choice - please try again.\n";
+		cout << Constants::InvalidChoiceError;
 		return getPlayerChoice();
 	}
 

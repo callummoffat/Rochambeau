@@ -9,7 +9,12 @@
 
 #include <stdio.h>
 #include <tchar.h>
+#include <iostream>
+#include <random>
+#include "MoveTypes.h"
+#include "Constants.h"
 
+using namespace std;
 
 
 // TODO: reference additional headers your program requires here
