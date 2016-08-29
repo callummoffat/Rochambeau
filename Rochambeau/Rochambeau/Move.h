@@ -9,6 +9,7 @@ public:
 	bool operator >(const Move& rhs);
 	bool operator ==(const Move& rhs);
 	bool operator !=(const Move& rhs);
+	bool operator <(const Move& rhs);
 	
 private:
 	MoveTypes _move;

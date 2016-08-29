@@ -41,6 +41,10 @@ void Game::play(string playerName)
 				computerScore++;
 			}
 		}
+
+		delete playersChoice;
+		delete computerChoice;
+
 	}
 
 	if (playerScore > computerScore)

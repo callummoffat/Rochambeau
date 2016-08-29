@@ -11,7 +11,16 @@ Move::~Move()
 {
 }
 
+bool Move::operator<(const Move & rhs)
+{
+	if (!((_move == MoveTypes::Paper && rhs._move == MoveTypes::Rock) ||
+		(_move == MoveTypes::Scissors && rhs._move == MoveTypes::Paper) ||
+		(_move == MoveTypes::Rock && rhs._move == MoveTypes::Scissors)))
+		return true;
+	return false;
 
+		
+}
 
 bool Move::operator>(const Move & rhs)
 {
