@@ -4,7 +4,7 @@
 #include "stdafx.h"
 #include "Game.h"
 
-const string GameVersion = "v2.0.1";
+const string GameVersion = "v2.1.0";
 
 string getPlayerName()
 {
@@ -46,7 +46,8 @@ int main()
 {
 	
 
-	cout << "Welcome to Rochambeau " << GameVersion << "!";
+	cout << "Welcome to Rochambeau " << GameVersion << "!\n"
+		 << "==============================================\n";
 	string name = getPlayerName();
 
 	Game* game = new Game();

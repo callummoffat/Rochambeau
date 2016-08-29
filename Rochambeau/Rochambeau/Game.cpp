@@ -61,14 +61,21 @@ int Game::getPlayerChoice()
 {
 	int result;
 	cout << "\nIn this game, you can choose between paper, scissors or rock."
-	     << "\nPress 1 for paper, 2 for scissors or 3 for rock.\n";
-	
+		<< "\nPress 1 for paper, 2 for scissors or 3 for rock.\n";
+
 	while (cout << "Enter your choice: " && !(cin >> result))
 	{
 		cin.clear();
 		cin.ignore(numeric_limits<streamsize>::max(), '\n'); //discard input
 		cout << "Invalid choice - please try again.\n";
 	}
+
+	if (result < 1 || result > 3)
+	{
+		cout << "Invalid choice - please try again.\n";
+		return getPlayerChoice();
+	}
+
 	return result;
 
 }
