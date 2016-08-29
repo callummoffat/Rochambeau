@@ -4,8 +4,6 @@
 #include "stdafx.h"
 #include "Game.h"
 
-const string GameVersion = "v2.1.0";
-
 string getPlayerName()
 {
 	string result;
@@ -14,16 +12,18 @@ string getPlayerName()
 	return result;
 }
 
+
 bool continuePrompt()
 {
+	// create a char object for input
 	char input;
 	
-
+	// display a prompt, and show an error if invalid data is provided.
 	while (cout << Constants::ContinuePrompt && !(cin >> input))
 	{
-		cin.clear();
+		cin.clear(); // clear the bad input bit
 		cin.ignore(numeric_limits<streamsize>::max(), '\n'); //discard input
-		cout << Constants::InvalidChoiceError;
+		cout << Constants::InvalidChoiceError; // display an error
 	}
 
 	switch (input)
@@ -42,20 +42,28 @@ bool continuePrompt()
 	}
 }
 
+
 int main()
 {
 	
 
+	// output heading
 	cout << Constants::WelcomeText
 		 << Constants::Heading;
+
+	// get the name of the player
 	string name = getPlayerName();
 
+	// create a new Game object
 	Game* game = new Game();
 
+	// enter an infinite loop
 	while (true)
 	{
+		// play the game
 		game->play(name);
 
+		// display "play again" prompt
 		if (!continuePrompt())
 			break;
 	}

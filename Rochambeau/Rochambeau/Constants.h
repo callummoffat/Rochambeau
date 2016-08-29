@@ -20,6 +20,7 @@ public:
 	static string getGameWinText(string playerName);
 	static string getGameLoseText(string playerName);
 private:
+	Constants();
 	static const string WinPrefix;
 	static const string LosePrefix;
 	static const string RoundWinSuffix;
