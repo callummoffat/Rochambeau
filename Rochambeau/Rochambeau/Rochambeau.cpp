@@ -15,6 +15,7 @@ string getPlayerName()
 
 bool continuePrompt()
 {
+	cout << Constants::NewLine;
 	// create a char object for input
 	char input;
 	

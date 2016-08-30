@@ -53,11 +53,13 @@ void Game::play(string playerName)
 
 	if (playerScore > computerScore)
 	{
-		cout << Constants::getGameWinText(playerName);
+		cout << Constants::Heading
+			 << Constants::getGameWinText(playerName);
 	}
 	else
 	{
-		cout << Constants::getGameLoseText(playerName);
+		cout << Constants::Heading
+			 << Constants::getGameLoseText(playerName);
 	}
 }
 
@@ -71,6 +73,8 @@ MoveTypes Game::getPlayerChoice()
 	cout << Constants::ChoiceIntroMessage;
 
 	// This loop checks for invalid input, and prevents it from being used.
+	// In the case of invalid data, the process clears the 'bad data' bit in the std::cin stream,
+	// Then clears the data that has been inputted. Then it displays an error message before the loop repeats.
 	while (cout << Constants::ChoiceEntryPrompt && !(cin >> result))
 	{
 		cin.clear();
@@ -78,13 +82,8 @@ MoveTypes Game::getPlayerChoice()
 		cout << Constants::InvalidChoiceError;
 	}
 
-	// Checks for an invalid value
-	if (result < Constants::MinValue || result > Constants::MaxValue)
-	{
-		cout << Constants::InvalidChoiceError;
-		return getPlayerChoice();
-	}
-
+	// Returns the correct enum value based on the number entered.
+	// If an invalid value is entered, the process is repeated.
 	switch (result)
 	{
 	case 1:
@@ -94,7 +93,8 @@ MoveTypes Game::getPlayerChoice()
 	case 3:
 		return MoveTypes::Rock;
 	default:
-		return MoveTypes::None;
+		cout << Constants::InvalidChoiceError;
+		return getPlayerChoice();
 	}
 
 }

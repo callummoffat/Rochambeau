@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "Constants.h"
 
-const string Constants::WelcomeText = "Welcome to Rochambeau v3.1.0!\n";
+const string Constants::WelcomeText = "Welcome to Rochambeau v3.2.0!\n";
 const string Constants::Heading = "=============================================\n";
 const string Constants::NameEntryPrompt = "\nEnter your name: ";
 const string Constants::ContinuePrompt = "Do you want to play again (y/n): ";
