@@ -22,7 +22,7 @@ bool continuePrompt()
 	while (cout << Constants::ContinuePrompt && !(cin >> input))
 	{
 		cin.clear(); // clear the bad input bit
-		cin.ignore(numeric_limits<streamsize>::max(), '\n'); //discard input
+		cin.ignore(numeric_limits<streamsize>::max(), Constants::NewLine); //discard input
 		cout << Constants::InvalidChoiceError; // display an error
 	}
 
@@ -72,7 +72,7 @@ int main()
 			break;
 	}
 	
-	cout << "\n";
+	cout << Constants::NewLine;
 	// displays press any key prompt
 	system("pause");
 

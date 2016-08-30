@@ -9,8 +9,10 @@ const string Constants::InvalidChoiceError = "Invalid choice - please try again.
 const string Constants::ChoiceIntroMessage = "\nIn this game, you can choose between paper, scissors or rock.\nPress 1 for paper, 2 for scissors or 3 for rock.\n";
 const string Constants::ChoiceEntryPrompt = "Enter your choice: ";
 const string Constants::DrawMessage = "\nThe match was a draw!";
-
-
+const char Constants::NewLine = '\n';
+const int Constants::MinValue = 1;
+const int Constants::MaxValue = 3;
+const int Constants::MaxScore = 2;
 const string Constants::WinPrefix = "Congratulations, ";
 const string Constants::LosePrefix = "Too bad, ";
 const string Constants::RoundWinSuffix = "! You won this round!\n";

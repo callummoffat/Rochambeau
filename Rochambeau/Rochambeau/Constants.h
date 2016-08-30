@@ -15,6 +15,10 @@ public:
 	static const string InvalidChoiceError;
 	static const string DrawMessage;
 	static const string ChoiceIntroMessage;
+	static const char NewLine;
+	static const int MinValue;
+	static const int MaxValue;
+	static const int MaxScore;
 	static string getRoundWinText(string playerName);
 	static string getRoundLoseText(string playerName);
 	static string getGameWinText(string playerName);

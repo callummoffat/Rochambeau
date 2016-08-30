@@ -23,7 +23,7 @@ void Game::play(string playerName)
 	// This loop repeats until either player has won two out of three matches.
 	// The score is increased if the player or the computer wins, but
 	// NOT if the match is a draw.
-	while (playerScore < 2 && computerScore < 2)
+	while (playerScore < Constants::MaxScore && computerScore < Constants::MaxScore)
 	{
 		Move* playersChoice = new Move(getPlayerChoice());
 		Move* computerChoice = new Move(getComputerChoice());
@@ -74,12 +74,12 @@ MoveTypes Game::getPlayerChoice()
 	while (cout << Constants::ChoiceEntryPrompt && !(cin >> result))
 	{
 		cin.clear();
-		cin.ignore(numeric_limits<streamsize>::max(), '\n'); //discard input
+		cin.ignore(numeric_limits<streamsize>::max(), Constants::NewLine); //discard input
 		cout << Constants::InvalidChoiceError;
 	}
 
 	// Checks for an invalid value
-	if (result < 1 || result > 3)
+	if (result < Constants::MinValue || result > Constants::MaxValue)
 	{
 		cout << Constants::InvalidChoiceError;
 		return getPlayerChoice();
@@ -105,7 +105,7 @@ MoveTypes Game::getComputerChoice()
 	// generate random number from 1 to 3.
 	mt19937 eng;
 	eng.seed(random_device()());
-	uniform_int_distribution<mt19937::result_type> dist3(1, 3);
+	uniform_int_distribution<mt19937::result_type> dist3(Constants::MinValue, Constants::MaxValue);
 	int result = dist3(eng);
 
 	// get the result.
