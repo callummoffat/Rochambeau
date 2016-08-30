@@ -15,7 +15,7 @@ public:
 private:
 	int computerScore;
 	int playerScore;
-	int getPlayerChoice();
-	int getComputerChoice();
+	MoveTypes getPlayerChoice();
+	MoveTypes getComputerChoice();
 };
 

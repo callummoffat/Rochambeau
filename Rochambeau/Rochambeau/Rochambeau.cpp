@@ -40,6 +40,8 @@ bool continuePrompt()
 
 
 	}
+
+	
 }
 
 
@@ -57,7 +59,9 @@ int main()
 	// create a new Game object
 	Game* game = new Game();
 
-	// enter an infinite loop
+	// enter an infinite loop where the game is repeatedly played
+	// and a play again prompt is displayed afterwards.
+	// The loop exits after the player opts not to continue playing.
 	while (true)
 	{
 		// play the game
@@ -69,7 +73,10 @@ int main()
 	}
 	
 	cout << "\n";
+	// displays press any key prompt
 	system("pause");
+
+	// deletes the reference to the Game object - it is no longer necessary
 	delete game;
     return 0;
 }
