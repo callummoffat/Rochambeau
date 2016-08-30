@@ -72,12 +72,15 @@ int main()
 			break;
 	}
 	
+	// output a new line
 	cout << Constants::NewLine;
 	// displays press any key prompt
 	system("pause");
 
 	// deletes the reference to the Game object - it is no longer necessary
 	delete game;
+
+	
     return 0;
 }
 
