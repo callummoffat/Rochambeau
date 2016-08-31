@@ -28,21 +28,21 @@ void Game::play(string playerName)
 		Move* playersChoice = new Move(getPlayerChoice());
 		Move* computerChoice = new Move(getComputerChoice());
 
-		if (playersChoice == computerChoice)
+		if (playersChoice < computerChoice)
 		{
-			cout << Constants::DrawMessage;
+			cout << Constants::getRoundLoseText(playerName);
+			computerScore++;
 		}
-		else 
+		else
 		{
-			if (playersChoice > computerChoice)
+			if (playersChoice != computerChoice)
 			{
 				cout << Constants::getRoundWinText(playerName);
 				playerScore++;
 			}
 			else
 			{
-				cout << Constants::getRoundLoseText(playerName);
-				computerScore++;
+				cout << Constants::DrawMessage;
 			}
 		}
 
