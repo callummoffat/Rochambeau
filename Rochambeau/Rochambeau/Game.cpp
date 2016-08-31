@@ -118,9 +118,7 @@ MoveTypes Game::getComputerChoice()
 	case 3:
 		return MoveTypes::Rock;
 	default:
-		return MoveTypes::None;
-	
-			
+		return MoveTypes::None;			
 	}
 	
 
